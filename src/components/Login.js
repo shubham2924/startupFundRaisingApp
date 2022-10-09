@@ -25,7 +25,8 @@ const Login = () => {
 
      
      if(useremail==email && pass==password){
-      console.log("test")
+      console.log("test");
+      localStorage.setItem("useremail",email)
       // navigate("/signup");
       navigate("/home");
      }
