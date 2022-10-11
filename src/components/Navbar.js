@@ -31,6 +31,8 @@ function Navbar() {
           
           
           <Link to="/myposts"> <Button variant="contained" startIcon={<FilterListIcon />}>My posts</Button> </Link> &nbsp;&nbsp;
+          <Link to="/myinvestments"> <Button variant="contained" startIcon={<FilterListIcon />}>My Investments</Button> </Link> &nbsp;&nbsp;
+          <Link to="/myfunds"> <Button variant="contained" startIcon={<FilterListIcon />}>My funds</Button> </Link> &nbsp;&nbsp;
             <Link to="/createpost"> <Button variant="contained" startIcon={<AddBoxIcon />}>Create a post</Button> </Link> &nbsp;&nbsp;&nbsp;
             <Button variant="contained" startIcon={<AccountCircleIcon />}>User</Button>&nbsp;
             <Button  variant="contained" startIcon={<LogoutIcon />}>Log Out</Button>

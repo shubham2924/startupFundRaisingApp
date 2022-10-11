@@ -45,8 +45,8 @@ export function UserAuthContextProvider({ children }) {
   let navigate = useNavigate();
 
   function logOut() {
-    // return signOut(auth);
-    navigate('/')
+    return signOut(auth);
+    // navigate('/')
   }
   function googleSignIn() {
     const googleAuthProvider = new GoogleAuthProvider();

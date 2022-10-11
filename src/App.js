@@ -8,6 +8,8 @@ import CreatePost from "./components/CreatePost";
 import PhoneSignUp from "./components/PhoneSignUp";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
+import MyFunds from "./components/MyFunds";
+import MyInvestments from "./components/MyInvestments";
 
 function App() {
   return (
@@ -19,15 +21,21 @@ function App() {
               <Route
                 path="/home"
                 element={
-                  <ProtectedRoute>
+                  // <ProtectedRoute>
                     <Home />
-                  </ProtectedRoute>
+                  // </ProtectedRoute>
                 }
               />
               <Route path="/" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
+              <Route path="/myfunds" element={<MyFunds />} />
+              <Route path="/myinvestments" element={<MyInvestments />} />
               <Route path="/phonesignup" element={<PhoneSignUp />} />
-              <Route path="/createpost" element={<CreatePost />} />
+              <Route path="/createpost" element={
+              // <ProtectedRoute>
+              <CreatePost />
+              // </ProtectedRoute>
+            } />
             </Routes>
           </UserAuthContextProvider>
     //     </Col>
