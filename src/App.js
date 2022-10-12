@@ -4,12 +4,14 @@ import "./App.css";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
-import CreatePost from "./components/CreatePost";
 import PhoneSignUp from "./components/PhoneSignUp";
+import Registration from "./components/Registration";
+import MyCompany from "./components/MyCompany";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
 import MyFunds from "./components/MyFunds";
 import MyInvestments from "./components/MyInvestments";
+import Landing from "./components/Landing";
 
 function App() {
   return (
@@ -26,14 +28,17 @@ function App() {
                   // </ProtectedRoute>
                 }
               />
-              <Route path="/" element={<Login />} />
+              {/* <Route path="/" element={<Login />} /> */}
+              <Route path="/" element={<Landing />} />
               <Route path="/signup" element={<Signup />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/mycompany" element={<MyCompany />} />
               <Route path="/myfunds" element={<MyFunds />} />
               <Route path="/myinvestments" element={<MyInvestments />} />
               <Route path="/phonesignup" element={<PhoneSignUp />} />
-              <Route path="/createpost" element={
+              <Route path="/registration" element={
               // <ProtectedRoute>
-              <CreatePost />
+              <Registration />
               // </ProtectedRoute>
             } />
             </Routes>

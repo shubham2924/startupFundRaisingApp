@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import { app } from "../firebase-config";
 import {query, where, collection,getFirestore, setDoc, doc, getDocs} from 'firebase/firestore';
+import Navbar from "./Navbar";
 const db=getFirestore(app)
 export default function MyInvestments() {
     const useremailid = localStorage.getItem("useremail");
@@ -23,6 +29,7 @@ export default function MyInvestments() {
 
   return (
     <>
+    <Navbar />
       <div className="homePage">
         {/* <Container maxWidth="sm"> */}
           <br></br>
@@ -34,49 +41,34 @@ export default function MyInvestments() {
               return (
                 <>
                 
-                {post.amount}
+                {/* {post.amount}
                 {post.receiver}
-                {post.date}
+                {post.date} */}
+                
+                <Card sx={{ maxWidth: 350  }}>
+      {/* <CardMedia
+        component="img"
+        height="140"
+        
+        image="/static/images/cards/contemplative-reptile.jpg"
+        alt="ABC Comapny"
+      /> */}
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+        Date of investment : {post.date}
+        </Typography>
+        <Typography gutterBottom variant="h5" component="div">
+        Amount you invested : {post.amount}
+        </Typography>
+        <Typography gutterBottom variant="h5" component="div">
+        Receiver : {post.receiver}
+        </Typography>
+      </CardContent>
+      
+      
+    </Card>
+    <br></br>
                 </>
-                // <Box display="inline-block">
-                //   <Card variant="outlined" sx={{ minWidth: 375 }}>
-                //     <CardContent>
-                //       <Typography
-                //         sx={{ fontSize: 24 }}
-                //         color="text.secondary"
-                //         gutterBottom
-                //       >
-                //         {post.title}
-                //       </Typography>
-                //       <Typography variant="h6" component="div">
-                //         Posted by : @{post.author.name}
-                //       </Typography>
-
-                //       <Typography variant="body2">
-                //         {post.desc}
-                //         <br />
-                //         <br></br>
-                //       </Typography>
-                //       <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                //         Published on : {post.postdate.date}
-                //       </Typography>
-                //     </CardContent>
-                //     &nbsp;&nbsp;&nbsp;
-                //     {authh && post.author.id === auth.currentUser.uid && (
-                //       <Button
-                //         onClick={() => {
-                //           deletePost(post.id);
-                //         }}
-                //         variant="outlined"
-                //         startIcon={<DeleteIcon />}
-                //       >
-                //         Delete
-                //       </Button>
-                //     )}
-                //     <br></br>
-                //     <br></br>
-                //   </Card><br></br>
-                // </Box>
               );
             })
           )}
