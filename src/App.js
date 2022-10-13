@@ -12,6 +12,7 @@ import { UserAuthContextProvider } from "./context/UserAuthContext";
 import MyFunds from "./components/MyFunds";
 import MyInvestments from "./components/MyInvestments";
 import Landing from "./components/Landing";
+import AllTransactions from "./components/AllTransactions";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
               {/* <Route path="/" element={<Login />} /> */}
               <Route path="/" element={<Landing />} />
               <Route path="/signup" element={<Signup />} />
+              <Route path="/alltransactions" element={<AllTransactions />} />
               <Route path="/login" element={<Login />} />
               <Route path="/mycompany" element={<MyCompany />} />
               <Route path="/myfunds" element={<MyFunds />} />
